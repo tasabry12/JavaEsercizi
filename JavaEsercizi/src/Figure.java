@@ -1,0 +1,24 @@
+import java.awt.Color;
+
+enum tipiTratto {fine, medio, normale, forte};
+
+public abstract class Figure {
+	Color penna = Color.black;
+	tipiTratto spessore = tipiTratto.normale;
+	
+	public Figure(){
+		//potenziali importanti azioni di inizializzazione
+		//...
+	}
+	
+
+	 abstract double Perimetro();               //basta che un solo metodo sia astratto affinche anche la classe debba essere astratta
+                                               //Abstract della classe madre stabilisce solo un modello per le classi figlie . In questo caso il modello
+	                                           //è che le classi figlie abbiano tutte un metodo Perimetro(), perfino il Punto
+	public Figure(Color c, tipiTratto tratto){
+		this();
+		penna = c; spessore=tratto;
+		
+	}	
+	
+}
